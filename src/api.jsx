@@ -1,11 +1,11 @@
 import axios from 'axios';
 const token = import.meta.env.VITE_FACEBOOK_ACCESS_TOKEN;
 
-export async function fetchGroups(town) {
+export async function fetchGroups(town, radius) {
   const accessToken = token;
-  const url = `https://graph.facebook.com/v19.0/search?type=group&q=${encodeURIComponent(
+  const url = `https://graph.facebook.com/search?type=group&q=${encodeURIComponent(
     town
-  )}&fields=id,name,description,member_count,privacy&access_token=${accessToken}`;
+  )}&distance${radius}&fields=id,name,description,member_count,privacy&access_token=${accessToken}`;
 
   try {
     const response = await axios.get(url);

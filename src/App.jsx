@@ -16,8 +16,8 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <h1>Facebook Group Search Tool</h1>
+    <div className='mt-40'>
+      <h1 className='text-4xl text-center font-bold mb-5'>Facebook Group Search Tool</h1>
       <SearchForm onSearch={handleSearch} />
       <SearchResult groups={searchResults} />
     </div>

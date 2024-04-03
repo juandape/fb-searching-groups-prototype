@@ -1,4 +1,3 @@
-
 import PropTypes from 'prop-types';
 
 SearchResult.propTypes = {
@@ -14,8 +13,9 @@ SearchResult.propTypes = {
 
 function SearchResult({ groups }) {
   return (
-    <div>
-      <h2>Search Results</h2>
+    <>
+<hr />
+      <h2 className='text-center text-2xl font-bold'>Search Results</h2>
       <ul>
         {groups.map((group) => (
           <li key={group.id}>
@@ -25,7 +25,7 @@ function SearchResult({ groups }) {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }
 
