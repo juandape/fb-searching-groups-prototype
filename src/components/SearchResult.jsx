@@ -16,7 +16,7 @@ function SearchResult({ groups }) {
       <h2 className='text-center text-2xl xl:text-3xl font-bold mt-5 text-blue-700'>
         Search Results
       </h2>
-      <div className='mt-10 flex justify-around flex-wrap animate-page-enter'>
+      <div className='mt-10 flex justify-around flex-wrap animate-page-enter mx-10'>
         {groups.map((group) => (
           <div
             key={group.id}
