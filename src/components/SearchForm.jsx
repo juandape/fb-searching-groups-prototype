@@ -17,7 +17,7 @@ function SearchForm({ onSearch }) {
           type='text'
           placeholder='Enter town name'
           value={town}
-          className='border-2 border-gray-300 p-2 rounded-lg w-48 my-4 ml-8 text-base hover:bg-gray-100'
+          className='border-2 border-gray-300 p-2 rounded-lg w-48 my-4 ml-8 text-base text-black hover:bg-gray-100'
           onChange={(e) => setTown(e.target.value)}
         />
       </label>
@@ -27,7 +27,7 @@ function SearchForm({ onSearch }) {
           type='number'
           placeholder='Enter radius in miles'
           value={radius}
-          className='border-2 border-gray-300 p-2 rounded-lg w-48 mb-4 ml-5 text-base hover:bg-gray-100'
+          className='border-2 border-gray-300 p-2 rounded-lg w-48 mb-4 ml-5 text-base text-black hover:bg-gray-100'
           onChange={(e) => setRadius(e.target.value)}
         />
       </label>
