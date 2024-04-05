@@ -10,8 +10,10 @@ function App() {
     try {
       const filteredGroups = apiGroups.filter((group) => {
         const distanceWithinRadius =
-          group.town === town && parseInt(group.radius) <= radius;
-        const meetsMembershipCriteria = group.type === 'community';
+          group.town.toLowerCase() === town.toLowerCase() &&
+          parseInt(group.radius) <= radius;
+        const meetsMembershipCriteria =
+          group.type === 'community' || group.type === 'town';
         const hasOver1000Members = group.Members > 1000;
         const isPrivateNonBusinessGroup =
           group.private === 'yes' && group.bussiness === 'no';
@@ -23,9 +25,12 @@ function App() {
           isPrivateNonBusinessGroup
         );
       });
-
-      setSearchResults(filteredGroups);
-      setError(null);
+      if (filteredGroups.length === 0) {
+        setError('No matching groups found.');
+      } else {
+        setSearchResults(filteredGroups);
+        setError(null);
+      }
     } catch (error) {
       console.error('Error searching groups:', error);
       setError('Failed to search groups. Please try again.');
@@ -34,12 +39,16 @@ function App() {
   };
 
   return (
-    <div className='mt-40'>
+    <div className='mt-40 relative'>
       <h1 className='text-4xl text-center font-bold mb-5'>
         Facebook Group Search Tool
       </h1>
       <SearchForm onSearch={handleSearch} />
-      {error && <p className='text-red-500 text-center'>{error}</p>}
+      {error && (
+        <p className='text-red-500 absolute top-96 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+          {error}
+        </p>
+      )}
       <SearchResult groups={searchResults} />
     </div>
   );
