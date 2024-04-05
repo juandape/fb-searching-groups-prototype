@@ -6,6 +6,7 @@ import { apiGroups } from '../utils/mockData';
 function App() {
   const [error, setError] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
+  const [radius, setRadius] = useState('');
   const handleSearch = (town, radius) => {
     try {
       const filteredGroups = apiGroups.filter((group) => {
@@ -30,6 +31,7 @@ function App() {
       } else {
         setSearchResults(filteredGroups);
         setError(null);
+        setRadius(radius);
       }
     } catch (error) {
       console.error('Error searching groups:', error);
@@ -56,7 +58,7 @@ function App() {
           {error}
         </p>
       )}
-      <SearchResult groups={searchResults} />
+      <SearchResult groups={searchResults} radius={radius} />
     </div>
   );
 }
