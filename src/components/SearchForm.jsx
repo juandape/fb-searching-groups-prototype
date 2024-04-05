@@ -31,9 +31,7 @@ function SearchForm({ onSearch }) {
           onChange={(e) => setRadius(e.target.value)}
         />
       </label>
-      <button
-        className='border-2 p-2 mx-auto font-bold rounded-lg w-20 mb-10 bg-blue-600 text-white hover:bg-blue-800'
-      >
+      <button className='border-2 p-2 mx-auto font-bold rounded-lg w-20 mb-10 bg-blue-600 text-white hover:bg-blue-800'>
         Search
       </button>
     </form>

@@ -20,7 +20,8 @@ function SearchResult({ groups, radius }) {
     <div className='animate-page-enter'>
       <hr />
       <h2 className='text-center text-2xl xl:text-3xl font-bold mt-5 text-blue-700'>
-      Groups located within {radius} mile radius of {firstGroup.town}, {firstGroup.state}
+        Groups located within {radius} mile radius of {firstGroup.town},{' '}
+        {firstGroup.state}
       </h2>
       <div className='mt-10 flex justify-around flex-wrap mx-10'>
         {groups.map((group) => (
