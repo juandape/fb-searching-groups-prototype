@@ -40,12 +40,19 @@ function App() {
 
   return (
     <div className='mt-40 relative'>
-      <h1 className='text-4xl text-center font-bold mb-5'>
+      <div className='mx-auto w-80 mb-10'>
+        <img
+          src='https://res.cloudinary.com/dpvmwsbq8/image/upload/v1712282416/upload-folder/615c5497a251fd06817ac696_facebook_tj8ojo.jpg'
+          alt='facebook groups img'
+          className='rounded-t-lg w-full'
+        />
+      </div>
+      <h1 className='text-4xl text-center font-bold mb-5 text-blue-600'>
         Facebook Group Search Tool
       </h1>
       <SearchForm onSearch={handleSearch} />
       {error && (
-        <p className='text-red-500 absolute top-96 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
+        <p className='text-blue-700 absolute left-1/2 transform -translate-x-1/2 translate-y-28'>
           {error}
         </p>
       )}

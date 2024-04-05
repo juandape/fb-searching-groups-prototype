@@ -4,15 +4,11 @@ function SearchResult({ groups }) {
   return (
     <>
       <hr />
-      <h2 className='text-center text-3xl font-bold mt-5'>Search Results</h2>
+      <h2 className='text-center text-3xl font-bold mt-5 text-blue-700'>Search Results</h2>
       <ul className='mt-10'>
         {groups.map((group) => (
           <li key={group.id} className='border-2 w-80 mb-4 mx-auto'>
-            <a
-              href={group.link}
-              target='_blank'
-              rel='noopener noreferrer'
-            >
+            <a href={group.link} target='_blank' rel='noopener noreferrer'>
               <p className='text-xl text-blue-500'>
                 Group Name: {group.groups}
               </p>
