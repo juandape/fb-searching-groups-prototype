@@ -1387,7 +1387,7 @@
       "businessPosts": "Any day",
       "radius": 20,
       "town": "Downtown",
-      "private": "no",
+      "private": "yes",
       "type": "community",
       "bussiness": "no",
       "link": "https://www.facebook.com/groups/217047648655491/?ref=share&mibextid=CTbP7E"
